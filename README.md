@@ -1,6 +1,7 @@
 # DAA
 QUESTION FOR PRACTISE
 #include <stdio.h>
+FIND MIN AND MAX ELEMENT IN AN ARRAY
 int main()
 {
     int n , i , min , max;
@@ -32,3 +33,38 @@ int main()
     printf("%d max number\n",max);
     printf("%d min number\n",min);
 }
+FIND SEARCH ELEMENT IN AN ARRAY
+#include <stdio.h>
+int main()
+{
+    int size , i ,flag , search;
+    int a[10];
+    printf("enter the size of an element\n");
+    scanf("%d",&size);
+    printf("enter an element in array: \n");
+    for(i=0; i<size; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter the search element\n");
+    scanf("%d",&search);
+    flag = 0;
+    for(i=0; i<size; i++)
+    {
+        if(a[i]==search)
+        {
+            flag = 1 ; 
+            break;
+        }
+        
+    }
+    if(flag == 1)
+    
+    {
+       printf("we found the search element %d and the position is %d ", search ,i+1);
+    }
+    else
+    printf("we dont found the search element %d",search);
+    
+}
+
