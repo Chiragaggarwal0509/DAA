@@ -1,7 +1,7 @@
 # DAA
-QUESTION FOR PRACTISE
+2.QUESTION FOR PRACTISE
 #include <stdio.h>
-FIND MIN AND MAX ELEMENT IN AN ARRAY
+1.FIND MIN AND MAX ELEMENT IN AN ARRAY
 int main()
 {
     int n , i , min , max;
@@ -33,7 +33,7 @@ int main()
     printf("%d max number\n",max);
     printf("%d min number\n",min);
 }
-FIND SEARCH ELEMENT IN AN ARRAY
+2.FIND SEARCH ELEMENT IN AN ARRAY
 #include <stdio.h>
 int main()
 {
