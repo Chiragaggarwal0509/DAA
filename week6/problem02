@@ -1,0 +1,114 @@
+//BIPARTITE GRAPH
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// #include<iostream>
+// #include<bits/stdc++.h>
+// using namespace std;
+// vector<vector<int>> adj;
+// vector<bool>vis;
+// vector<int> col;
+// bool bipart;
+// void color(int u , int curr)
+// {
+//     if(col[u]!=-1 && col[u] != curr)
+//     {
+
+//         bipart = false;
+//         return;
+//     }
+//     col[u]=curr;
+//     if(vis[u])
+//         return;
+//     vis[u]=true;
+//     for(auto i: adj[u]){
+//         color(i,curr xor 1);
+//     }
+// }
+// int main()
+// {
+//      bipart= true;
+
+//     int n , m ;
+//     cin>>n>>m;
+//     adj=vector<vector<int>>(n);
+//     vis = vector<bool>(n,false);
+//     col=vector<int>(n,-1);
+//     for(int i = 0 ; i<m; i++)
+//     {
+//       int u,v;
+//       cin>>u>>v;
+//       adj[u].push_back(v);
+//       adj[v].push_back(u);
+//     }
+//     for(int i = 0 ; i<n ; i++)
+//     {
+
+//         if(!vis[i]){
+//             color(i,0);
+//         }
+//     }
+//     if(bipart)
+//     {
+
+//         cout<<"graph is bipart";
+//     }
+//     else
+//         cout<<"graph is not bipart";
+// }
+#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+using namespace std;
+void markvisited(int **g,int n,int k)
+{
+    for(int i =0; i<n; ++i)
+    if(g[i][k]==1)
+    g[i][k]==2;
+}
+bool bipart(int **g , int n)
+{
+    queue<int>Queue;
+    Queue.push(0);
+    int color[n]={1};
+    markvisited(g,n,0);
+    while(!Queue.empty())
+    {
+        int u = Queue.front();
+        Queue.pop();
+        int curcol=color[u]*-1;
+        for(int i = 0 ; i<n; i++)
+        {
+            if(g[u][i] != 0)
+            {
+                if(color[i]==0)
+                color[i]=curcol;
+                else if(color[i]!=curcol)
+                return false ;
+                if(g[u][i]==1)
+                {
+                    Queue.push(i);
+                    markvisited(g,n,i);
+                }
+            }
+        }
+    }return true;
+}
+int main()
+{
+    int n ; 
+    cin>>n;
+    int **arr;
+    arr=(int**)malloc(n*sizeof(int *));
+    for(int i = 0  ; i<n; i++)
+        arr[i]=(int *)malloc(n*sizeof(int));
+        for(int i = 0 ; i<n; i++)
+        for(int j = 0 ; j<n; j++)
+        cin>>arr[i][j];
+        int s,d;
+        cin>>s>>d;
+        bool isbipart= bipart(arr,n);
+        if(isbipart)
+        cout<<"Bipartite"<<endl;
+        else
+        cout<<"Not bipartite"<<endl;
+        return 0;
+}
