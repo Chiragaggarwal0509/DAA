@@ -85,3 +85,23 @@ const findUncommon = (str1 = '', str2 = '') => {
     return res.join("");
 };
 console.log(findUncommon(str1, str2));
+
+function differenceInMonths(date1, date2) {
+    const monthDiff = date1.getMonth() - date2.getMonth();
+    const yearDiff = date1.getYear() - date2.getYear();
+  
+    return monthDiff + yearDiff * 12;
+  }
+function res()
+{
+const str1 = prompt("enter the date1");
+const str2 = prompt("enter the  date2");
+  
+  const date1 = new Date(str1);
+  
+  const date2 = new Date(str2);
+  
+  const difference = differenceInMonths(date1, date2);
+  
+  console.log(difference);
+}
