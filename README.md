@@ -67,44 +67,6 @@ int main()
     printf("we dont found the search element %d",search);
     
 }
-
-const str1 = "xyab";
-const str2 = "xzca";
-const findUncommon = (str1 = '', str2 = '') => {
-   const res = [];
-   for (let i = 0; i < str1.length; i++){
-      if (!(str2.includes(str1[i]))){
-         res.push(str1[i])
-      }
-   }
-   for (let i = 0; i < str2.length; i++){
-      if (!(str1.includes(str2[i]))){
-         res.push(str2[i])
-      }
-    }
-    return res.join("");
-};
-console.log(findUncommon(str1, str2));
-
-function differenceInMonths(date1, date2) {
-    const monthDiff = date1.getMonth() - date2.getMonth();
-    const yearDiff = date1.getYear() - date2.getYear();
-  
-    return monthDiff + yearDiff * 12;
-  }
-function res()
-{
-const str1 = prompt("enter the date1");
-const str2 = prompt("enter the  date2");
-  
-  const date1 = new Date(str1);
-  
-  const date2 = new Date(str2);
-  
-  const difference = differenceInMonths(date1, date2);
-  
-  console.log(difference);
-}
 <?php
 $target_dir = "C:/xampp/htdocs/cwharry/";
 $target_file = $target_dir . basename($_FILES["file"]["name"]);
