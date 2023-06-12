@@ -105,3 +105,16 @@ const str2 = prompt("enter the  date2");
   
   console.log(difference);
 }
+<?php
+$target_dir = "C:/xampp/htdocs/cwharry/";
+$target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+// if everything is ok, try to upload file
+{
+  if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+    echo "The file "." has been uploaded.";
+  } else {
+    echo "Sorry, there was an error uploading your file.";
+  }
+}
+?>
